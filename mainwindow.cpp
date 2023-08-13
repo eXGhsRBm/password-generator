@@ -5,6 +5,7 @@
 #include "constants.h"
 
 #include <QRandomGenerator>
+#include <QClipboard>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -254,4 +255,71 @@ void MainWindow::on_lineEdit_special_textChanged(const QString &arg1)
 {
     uint size = arg1.length() - 1;
     ui->spinBox_number_special->setMaximum(size);
+}
+
+
+void MainWindow::on_pushButton_copy_pressed()
+{
+    QClipboard *clipboard = QGuiApplication::clipboard();
+    clipboard->clear();
+    QString buffer = ui->lineEdit_generation_result->text();
+    clipboard->setText(buffer);
+}
+
+
+void MainWindow::on_pushButton_letters_down_decrease_pressed()
+{
+    int i = ui->spinBox_number_letters_down->value();
+    i--;
+    ui->spinBox_number_letters_down->setValue(i);
+}
+void MainWindow::on_pushButton_letters_down_increase_pressed()
+{
+    int i = ui->spinBox_number_letters_down->value();
+    i++;
+    ui->spinBox_number_letters_down->setValue(i);
+}
+
+
+
+void MainWindow::on_pushButton_letters_up_decrease_pressed()
+{
+    int i = ui->spinBox_number_letters_up->value();
+    i--;
+    ui->spinBox_number_letters_up->setValue(i);
+}
+void MainWindow::on_pushButton_letters_up_increase_pressed()
+{
+    int i = ui->spinBox_number_letters_up->value();
+    i++;
+    ui->spinBox_number_letters_up->setValue(i);
+}
+
+
+
+void MainWindow::on_pushButton_digits_decrease_pressed()
+{
+    int i = ui->spinBox_number_digits->value();
+    i--;
+    ui->spinBox_number_digits->setValue(i);
+}
+void MainWindow::on_pushButton_digits_increase_pressed()
+{
+    int i = ui->spinBox_number_digits->value();
+    i++;
+    ui->spinBox_number_digits->setValue(i);
+}
+
+
+void MainWindow::on_pushButton_special_decrease_pressed()
+{
+    int i = ui->spinBox_number_special->value();
+    i--;
+    ui->spinBox_number_special->setValue(i);
+}
+void MainWindow::on_pushButton_special_increase_pressed()
+{
+    int i = ui->spinBox_number_special->value();
+    i++;
+    ui->spinBox_number_special->setValue(i);
 }

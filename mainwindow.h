@@ -30,6 +30,24 @@ private slots:
 
     void on_lineEdit_special_textChanged(const QString &arg1);
 
+    void on_pushButton_copy_pressed();
+
+    void on_pushButton_special_decrease_pressed();
+
+    void on_pushButton_letters_down_decrease_pressed();
+
+    void on_pushButton_letters_down_increase_pressed();
+
+    void on_pushButton_letters_up_decrease_pressed();
+
+    void on_pushButton_letters_up_increase_pressed();
+
+    void on_pushButton_digits_decrease_pressed();
+
+    void on_pushButton_digits_increase_pressed();
+
+    void on_pushButton_special_increase_pressed();
+
 private:
     Ui::MainWindow *ui;
 
